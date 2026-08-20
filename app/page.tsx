@@ -55,26 +55,6 @@ export default function HomePage() {
           <Link href="/bundle" style={{ position: "absolute", inset: 0, zIndex: 10 }} aria-label="Shop the Home Reset bundle" />
         </div>
 
-        {/* Pare Repeat entry */}
-        <div style={{ padding: "20px 20px 0" }}>
-          <p style={{ fontFamily: "var(--font-lora)", fontWeight: 600, fontSize: 16, color: "#1f2e45", marginBottom: 12 }}>Your Pare Repeat</p>
-          <Link href="/bag" style={{ display: "flex", alignItems: "center", gap: 12, background: "white", border: "1px solid #d6ded6", borderRadius: 16, padding: "12px 16px" }}>
-            <div style={{ width: 30, height: 30, borderRadius: "50%", background: "#ddf2ef", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 4V1L8 5L12 9V6C15.31 6 18 8.69 18 12C18 13.01 17.75 13.97 17.3 14.8L18.76 16.26C19.54 15.03 20 13.57 20 12C20 7.58 16.42 4 12 4ZM12 18C8.69 18 6 15.31 6 12C6 10.99 6.25 10.03 6.7 9.2L5.24 7.74C4.46 8.97 4 10.43 4 12C4 16.42 7.58 20 12 20V23L16 19L12 15V18Z" fill="#1a7a70"/>
-              </svg>
-            </div>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 15, color: "#1f2e45" }}>Pare Repeat</span>
-                <span style={{ background: "#1a7a70", color: "white", fontSize: 10, fontWeight: 700, borderRadius: 100, padding: "1px 6px" }}>3</span>
-              </div>
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, color: "#596673", marginTop: 2 }}>3 active subscriptions</p>
-            </div>
-            <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 18, color: "#0d7a70" }}>→</span>
-          </Link>
-        </div>
-
         {/* Divider */}
         <div style={{ height: 1, background: "#e8e8e4", margin: "24px 0" }} />
 
