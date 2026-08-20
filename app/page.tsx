@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import BottomNav from "@/components/BottomNav";
 import { PRODUCTS } from "@/lib/products";
 
@@ -11,6 +12,7 @@ const CATEGORIES = [
 ];
 
 export default function HomePage() {
+  const router = useRouter();
   return (
     <div style={{ position: "relative", height: "100%", background: "#fafaf7", display: "flex", flexDirection: "column", overflow: "hidden" }}>
       <div style={{ flex: 1, overflowY: "auto", paddingBottom: 100, scrollbarWidth: "none" }}>
@@ -28,7 +30,7 @@ export default function HomePage() {
         </div>
 
         {/* Campaign bundle banner */}
-        <Link href="/bundle" style={{ margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", display: "flex", height: 180, position: "relative" }}>
+        <div onClick={() => router.push("/bundle")} style={{ cursor: "pointer", margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", display: "flex", height: 180, position: "relative" }}>
           <div style={{ flex: "0 0 170px", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", zIndex: 1 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
               <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: 11, letterSpacing: "0.07em", color: "#0d7a70", textTransform: "uppercase" }}>The Home Reset</p>
@@ -51,7 +53,7 @@ export default function HomePage() {
             <span style={{ fontSize: 9, letterSpacing: "0.06em" }}>SAVE</span>
             <span style={{ fontSize: 15, lineHeight: 1.1 }}>−CHF 8</span>
           </div>
-        </Link>
+        </div>
 
         {/* Pare Repeat entry */}
         <div style={{ padding: "20px 20px 0" }}>
