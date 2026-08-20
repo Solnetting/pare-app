@@ -30,7 +30,7 @@ export default function HomePage() {
         </div>
 
         {/* Campaign bundle banner */}
-        <button type="button" onClick={() => router.push("/bundle")} style={{ display: "flex", width: "calc(100% - 40px)", margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", height: 180, position: "relative", padding: 0, cursor: "pointer" }}>
+        <a href="/bundle" style={{ display: "flex", width: "calc(100% - 40px)", margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", height: 180, position: "relative", textDecoration: "none" }}>
           <div style={{ flex: "0 0 170px", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", zIndex: 1 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 5, textAlign: "left" }}>
               <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: 11, letterSpacing: "0.07em", color: "#0d7a70", textTransform: "uppercase" }}>The Home Reset</p>
@@ -53,7 +53,7 @@ export default function HomePage() {
             <span style={{ fontSize: 9, letterSpacing: "0.06em" }}>SAVE</span>
             <span style={{ fontSize: 15, lineHeight: 1.1 }}>−CHF 8</span>
           </div>
-        </button>
+        </a>
 
         {/* Pare Repeat entry */}
         <div style={{ padding: "20px 20px 0" }}>
