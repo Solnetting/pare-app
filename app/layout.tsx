@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart";
+import ScreenNav from "@/components/ScreenNav";
 
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora", weight: ["400", "600"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["300", "400", "500", "600", "700"] });
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}>
             {children}
           </div>
+          <ScreenNav />
         </CartProvider>
       </body>
     </html>
