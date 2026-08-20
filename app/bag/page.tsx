@@ -31,10 +31,14 @@ export default function BagPage() {
             <p style={{ fontFamily: "var(--font-inter)", fontSize: 14, color: "#5a6470" }}>Your essentials are on their way. Thoughtfully packed.</p>
           </div>
         ) : items.length === 0 ? (
-          <div style={{ padding: "60px 20px", textAlign: "center" }}>
-            <div style={{ fontSize: 48, marginBottom: 20 }}>🛍</div>
-            <p style={{ fontFamily: "var(--font-lora)", fontWeight: 600, fontSize: 18, color: "#1f2e45", marginBottom: 8 }}>Your bag is empty</p>
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: 14, color: "#5a6470" }}>Browse our curated essentials to get started.</p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "60%", padding: "0 40px", textAlign: "center", gap: 16 }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c8ccc8" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <div>
+              <p style={{ fontFamily: "var(--font-lora)", fontWeight: 600, fontSize: 18, color: "#1f2e45", marginBottom: 6 }}>Your bag is empty</p>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: 14, color: "#9aa0a6", lineHeight: 1.5 }}>Browse our curated essentials to get started.</p>
+            </div>
           </div>
         ) : (
           <>
