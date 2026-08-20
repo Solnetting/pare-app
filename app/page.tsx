@@ -30,14 +30,14 @@ export default function HomePage() {
         </div>
 
         {/* Campaign bundle banner */}
-        <div onClick={() => router.push("/bundle")} style={{ cursor: "pointer", margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", display: "flex", height: 180, position: "relative" }}>
+        <button type="button" onClick={() => router.push("/bundle")} style={{ display: "flex", width: "calc(100% - 40px)", margin: "20px 20px 0", borderRadius: 16, background: "#fae5c4", overflow: "hidden", border: "1px solid #d6d9cc", height: 180, position: "relative", padding: 0, cursor: "pointer" }}>
           <div style={{ flex: "0 0 170px", padding: 14, display: "flex", flexDirection: "column", justifyContent: "space-between", zIndex: 1 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 5, textAlign: "left" }}>
               <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: 11, letterSpacing: "0.07em", color: "#0d7a70", textTransform: "uppercase" }}>The Home Reset</p>
               <p style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 18, lineHeight: 1.2, color: "#1f2e45" }}>3 everyday essentials.</p>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: 11, color: "#596673" }}>Laundry · home · care</p>
             </div>
-            <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 14, color: "#0d7a70" }}>Shop bundle →</span>
+            <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: 14, color: "#0d7a70", textAlign: "left" }}>Shop bundle →</span>
           </div>
           <div style={{ flex: 1, position: "relative" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -53,7 +53,7 @@ export default function HomePage() {
             <span style={{ fontSize: 9, letterSpacing: "0.06em" }}>SAVE</span>
             <span style={{ fontSize: 15, lineHeight: 1.1 }}>−CHF 8</span>
           </div>
-        </div>
+        </button>
 
         {/* Pare Repeat entry */}
         <div style={{ padding: "20px 20px 0" }}>
