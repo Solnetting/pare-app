@@ -22,7 +22,7 @@ export default function ScreenNav() {
       className="screen-nav"
       style={{
         position: "fixed",
-        bottom: 28,
+        top: 24,
         left: "50%",
         transform: "translateX(-50%)",
         zIndex: 200,
