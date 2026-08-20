@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-canvas:    #fafaf7;
+  --color-navy:      #1f2e45;
+  --color-teal:      #1a7a70;
+  --color-teal-soft: #ddf2ef;
+  --color-teal-mid:  #0d7a70;
+  --color-cream:     #fae5c4;
+  --color-apricot:   #fae5bf;
+  --color-sand:      #f1f1ed;
+  --color-care:      #fae8cc;
+  --color-carry:     #dbf2ed;
+  --color-border:    #d9dbd5;
+  --color-muted:     #5a6470;
+  --font-display:    var(--font-lora), Georgia, serif;
+  --font-body:       var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { height: 100%; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  background: #1c1c1e;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
+
+@media (max-width: 430px) {
+  body { background: var(--color-canvas); }
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; background: none; border: none; padding: 0; font: inherit; }
