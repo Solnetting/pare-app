@@ -10,6 +10,7 @@ function ProductsContent() {
   const initial = (params.get("cat") as Category) || null;
   const [active, setActive] = useState<Category | null>(initial);
   const [search, setSearch] = useState("");
+  const [focused, setFocused] = useState(false);
 
   const filtered = PRODUCTS.filter(p => {
     const matchCat = !active || p.category === active;
@@ -22,16 +23,38 @@ function ProductsContent() {
       <div style={{ flex: 1, overflowY: "auto", paddingBottom: 100, scrollbarWidth: "none" }}>
 
         {/* Header */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 20px 0" }}>
-          <h1 style={{ fontFamily: "var(--font-lora)", fontWeight: 600, fontSize: 24, color: "#1f304a" }}>All products</h1>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, background: "white", border: "1px solid #d9dbd5", borderRadius: 100, padding: "8px 14px" }}>
-            <span style={{ fontSize: 16, color: "#5a6470" }}>⌕</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "20px 20px 0", transition: "all 0.3s ease" }}>
+          <h1 style={{
+            fontFamily: "var(--font-lora)", fontWeight: 600, color: "#1f304a",
+            fontSize: focused ? 0 : 24,
+            opacity: focused ? 0 : 1,
+            maxWidth: focused ? 0 : 200,
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            transition: "font-size 0.25s ease, opacity 0.2s ease, max-width 0.25s ease",
+          }}>All products</h1>
+          <div style={{
+            flex: 1,
+            display: "flex", alignItems: "center", gap: 8,
+            background: "white",
+            border: `1px solid ${focused ? "#1a7a70" : "#d9dbd5"}`,
+            borderRadius: 100,
+            padding: "10px 16px",
+            transition: "border-color 0.2s ease",
+          }}>
+            <span style={{ fontSize: 16, color: focused ? "#1a7a70" : "#5a6470", transition: "color 0.2s ease", flexShrink: 0 }}>⌕</span>
             <input
               value={search}
               onChange={e => setSearch(e.target.value)}
+              onFocus={() => setFocused(true)}
+              onBlur={() => { if (!search) setFocused(false); }}
               placeholder="Find products"
-              style={{ border: "none", outline: "none", fontFamily: "var(--font-inter)", fontSize: 13, color: "#1f2e45", background: "transparent", width: 110 }}
+              autoComplete="off"
+              style={{ border: "none", outline: "none", fontFamily: "var(--font-inter)", fontSize: 13, color: "#1f2e45", background: "transparent", width: "100%" }}
             />
+            {focused && search && (
+              <button onClick={() => { setSearch(""); setFocused(false); }} style={{ color: "#5a6470", fontSize: 18, lineHeight: 1, flexShrink: 0 }}>×</button>
+            )}
           </div>
         </div>
 
